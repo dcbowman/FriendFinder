@@ -49,13 +49,13 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 // Basic route that sends the user first to the AJAX Page
 app.get('/', function(req, res){
-	//res.send("Welcome to the Star Wars Page!")
-	res.sendFile(path.join(__dirname + 'home.html'));
+	//loads the main html page
+	res.sendFile(path.join(__dirname + '/app/public/home.html'));
 })
 
 app.get('/survey', function(req, res){
-	//res.send("Welcome to the Star Wars Page!")
-	res.sendFile(path.join(__dirname + 'survey.html'));
+	//loads the survey page
+	res.sendFile(path.join(__dirname + '/app/public/survey.html'));
 })
 
 
