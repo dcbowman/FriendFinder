@@ -154,15 +154,22 @@ console.log("js loaded");
 //takes basic info and adds it to the database
 $(addBtn).on("click", function(){
   console.log("click");
+
+    var answers=[] //creates array to hold the values of the questions
+
+
+
       //creates information api to send to database
       var newMember = 
       {
         name: $("#name").val().trim(),
         location: $("#location").val().trim(),
         age: $("#age").val().trim(),
-        //photo:$("#photo").val().trim() //need to check
-        
+        photoLink:$("#photo").val().trim(), //need to check
+        score:$(answers)
       };
+
+      console.log(newMember);
 
       var currentURL = window.location.origin;
 
