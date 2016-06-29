@@ -16,7 +16,7 @@ app.get('/survey', function(req, res){
 });
 
 app.get('/new', function(req, res){
-	//loads the survey page
+	//loads the results page
 	res.sendFile(path.join(__dirname + '/../public/new.html'));
 });
 //if no matching route found this defaults

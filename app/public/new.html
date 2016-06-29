@@ -28,7 +28,7 @@ Copy
 
  <p><a class="btn btn-primary btn-lg" href="survey" role="button" id="start">Find another friend!</a></p>
 
-<a href="/api/new">API Member Link</a>
+<a href="/api/survey">API Member Link</a>
 
 </body>
 </html>
@@ -38,14 +38,17 @@ Copy
 <script src="https://code.jquery.com/jquery.js"></script>
 <script type="text/javascript">
 
-function runMemberQuery(){
+$(document).ready(function(){
+	console.log("new is loaded");
+
+	function runMemberQuery(){
 //gets location of root page
 	var currentURL = window.location.origin;
 
 //AJAX function uses current URL with the API to GET the data associated with it
-	$.ajax({url: currentURL + "/api/new", method: "GET"})
+	$.ajax({url: currentURL + "/api/survey", method: "GET"})
 	.done(function(memberData){
-		console.log("URL:" + currentURL +"/api/tables"); //logs URL to access incase of troubleshooting
+		console.log("URL:" + currentURL +"/api/survey"); //logs URL to access incase of troubleshooting
 
 		console.log(memberData);
 
@@ -54,7 +57,7 @@ function runMemberQuery(){
 	})
 
 }
-
+})
 //calls the function
 
 runMemberQuery(); 

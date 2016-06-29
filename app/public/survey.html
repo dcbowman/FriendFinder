@@ -14,7 +14,7 @@
 </div>
 <div class="row">
 
-      <div class="col-lg-12">
+      <div class="col-lg-6">
 
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -121,6 +121,7 @@
 
 <p><a class="btn btn-primary btn-lg" href="new" role="button" id="addBtn">Find a friend!</a></p>
 
+<a href="/api/survey">API Member Link</a>
 
 </body>
 </html>
@@ -146,7 +147,7 @@ $(addBtn).on("click", function(){
           
 
       //creates information api to send to database
-      var newMember = 
+      var newData = 
       {
         name: $("#name").val().trim(),
         location: $("#location").val().trim(),
@@ -155,13 +156,14 @@ $(addBtn).on("click", function(){
         score:$(answers)
       };
 
-      console.log(newMember);
+      console.log(newData);
+
 
 //gets the location of the root page
-      var currentURL = window.location.origin;
+var currentURL = window.location.origin;
 
       //adds new member to the api database
-      $.post(currentURL + "/api/survey", newMember,
+      $.post(currentURL + "/api/survey", newMembers,
         function(data){
           console.log("profile added");
           alert("Adding profile")

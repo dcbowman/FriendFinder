@@ -1,5 +1,5 @@
 
-var memberData 	= require('../data/friends.js');
+var newMembers 	= require('../data/friends.js');
 var path = require('path');
 
 
@@ -7,20 +7,19 @@ module.exports = function(app){
 
 //loads page of API data where all of the members are listed
 	app.get('/api/survey', function(req, res){
-		res.json(memberData);
+		res.json(newMembers);
 	});
 
 
 // Create member - takes in JSON input and adds it to the api
-app.post('/api/new', function(req, res){
+app.post('/api/survey', function(req, res){
 
-	var newmember = req.body;
-	newmember.routeName = newcharacter.name.replace(/\s+/g, '').toLowerCase()
+	var newMembers = req.body;
 
-	console.log(newmember);
+	console.log(newMembers);
 
-	characters.push(newmember);
+	characters.push(newMembers);
 
-	res.json(newmember);
+	res.json(newMembers);
 })
 }
