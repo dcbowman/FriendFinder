@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
+// Ensures css from the public folder will work
+app.use(express.static('app/public'));
+
 
 // Routes
 // =============================================================
