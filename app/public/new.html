@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+
+ <!-- Bootstrap File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="jumbotron">
+  <h1>Did we just become best friends?</h1>
+</div>
+
+Copy
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <p><a class="btn btn-primary btn-lg" href="survey" role="button" id="start">Find another friend!</a></p>
+
+<a href="/api/new">API Member Link</a>
+
+</body>
+</html>
+
+
+<!--starts javascript-->
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+
+function runMemberQuery(){
+//gets location of root page
+	var currentURL = window.location.origin;
+
+//AJAX function uses current URL with the API to GET the data associated with it
+	$.ajax({url: currentURL + "/api/new", method: "GET"})
+	.done(function(memberData){
+		console.log("URL:" + currentURL +"/api/tables"); //logs URL to access incase of troubleshooting
+
+		console.log(memberData);
+
+
+
+	})
+
+}
+
+//calls the function
+
+runMemberQuery(); 
+
+
+
+
+</script>
+
+
+
+
+
+

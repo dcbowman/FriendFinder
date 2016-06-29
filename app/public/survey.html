@@ -119,7 +119,7 @@
 <input type="radio" name="quest10" value="5">5
 <br><br>
 
-<p><a class="btn btn-primary btn-lg" role="button" id="addBtn">Find a friend!</a></p>
+<p><a class="btn btn-primary btn-lg" href="new" role="button" id="addBtn">Find a friend!</a></p>
 
 
 </body>
@@ -157,12 +157,13 @@ $(addBtn).on("click", function(){
 
       console.log(newMember);
 
+//gets the location of the root page
       var currentURL = window.location.origin;
 
       //adds new member to the api database
-      $.post( currentURL + "/api/new", newMember)
-        .done(function(data){
-          console.log(data);
+      $.post(currentURL + "/api/survey", newMember,
+        function(data){
+          console.log("profile added");
           alert("Adding profile")
         });
 

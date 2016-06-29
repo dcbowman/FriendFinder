@@ -5,8 +5,8 @@ var path = require('path');
 
 module.exports = function(app){
 
-//loads page where all of the members are listed
-	app.get('/api/member', function(req, res){
+//loads page of API data where all of the members are listed
+	app.get('/api/survey', function(req, res){
 		res.json(memberData);
 	});
 
