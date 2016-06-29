@@ -131,15 +131,18 @@
   
 $(document).ready(function(){
 
-console.log("js loaded");
+//console.log("js loaded");
 //takes basic info and adds it to the database
 $(addBtn).on("click", function(){
-  console.log("click");
+  //console.log("click");
 
     var answers=[] //creates array to hold the values of the questions
 
-
-
+  //takes the value of each checked button and pushes it into the array
+    $('input:checked').each(function(){ 
+    answers.push($(this).val());
+});
+          
 
       //creates information api to send to database
       var newMember = 
@@ -160,7 +163,7 @@ $(addBtn).on("click", function(){
         .done(function(data){
           console.log(data);
           alert("Adding profile")
-        })
+        });
 
       return false;
 
