@@ -1,6 +1,6 @@
 //will hold all of the data for new members
 
-var newMembers = [
+var friends = [
 
 	{
 		name: "Danielle",
@@ -12,4 +12,4 @@ var newMembers = [
 
 ]
 
-module.exports = newMembers; //makes table data available to other pages
+module.exports = friends; //makes table data available to other pages
